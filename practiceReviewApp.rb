@@ -1,10 +1,10 @@
 line = "----------------------"
 puts "ジャンルを入力してください："
-genre = gets
+genre = gets.chomp
 puts "タイトルを入力してください："
-title = gets
+title = gets.chomp
 puts "感想を入力してください："
-review = gets
+review = gets.chomp
 
 puts "ジャンル : #{genre}\n#{line}"
 puts "タイトル : #{title}\n#{line}"
