@@ -6,6 +6,7 @@ def post_review
   post[:title] = gets.chomp
   puts "感想を入力してください："
   post[:review] = gets.chomp
+  line = "----------------------"
 
   puts "ジャンル : #{post[:genre]}\n#{line}"
   puts "タイトル : #{post[:title]}\n#{line}"
@@ -23,21 +24,23 @@ def exception
   puts "入力された値は無効です"
 end
 
-line = "----------------------"
-puts "レビュー数 : 0"
-puts "[0]レビューを書く\n[1]レビューを読む\n[2]アプリを終了する"
-input = gets.to_i
 
+while true do
+  puts "レビュー数 : 0"
+  puts "[0]レビューを書く\n[1]レビューを読む\n[2]アプリを終了する"
+  input = gets.to_i
 
-if input == 0 
-  post_review
-elsif input == 1
-  read_review
-elsif input == 2
-  end_program
-else
-  exception
+  if input == 0 
+    post_review
+  elsif input == 1
+    read_review
+  elsif input == 2
+    end_program
+  else
+    exception
+  end
 end
+
 
 
 
