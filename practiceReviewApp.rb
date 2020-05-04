@@ -17,7 +17,11 @@ end
 
 def read_review(a_posts)
   puts "見たいレビューを選択してください"
-  
+  number = 0
+  a_posts.each do |p|
+    puts "[#{number}] : #{p[:title]}のレビュー"
+    number += 1
+  end
   input = gets.to_i
   post = a_posts[input]
   line = "----------------------"
