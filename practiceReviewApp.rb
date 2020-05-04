@@ -63,14 +63,3 @@ while true do
     exception
   end
 end
-
-
-
-
-
-
-# バックスラッシュ記法
-# \n 改行
-# \t タブ
-# \b バックスペース
-# \\ バックスラッシュ
