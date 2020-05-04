@@ -1,12 +1,14 @@
-puts "ジャンル : 映画"
-puts "----------------------"
-puts "タイトル : 時をかける少女"
-puts "----------------------"
-puts "感想 :"
-puts "人生の最高傑作アニメ。\n\n早く見たほうがいいよ。"
-puts "----------------------"
+line = "----------------------"
+puts "ジャンルを入力してください："
+genre = gets
+puts "タイトルを入力してください："
+title = gets
+puts "感想を入力してください："
+review = gets
 
-
+puts "ジャンル : #{genre}\n#{line}"
+puts "タイトル : #{title}\n#{line}"
+puts "感想 :\n#{review}\n#{line}"
 
 
 
