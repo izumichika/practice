@@ -16,18 +16,26 @@ def post_review(a_posts)
 end
 
 def read_review(a_posts)
-  puts "見たいレビューを選択してください"
-  number = 0
-  a_posts.each do |p|
-    puts "[#{number}] : #{p[:title]}のレビュー"
-    number += 1
+  if a_posts.empty?
+    puts "レビューが登録されていません"
+  else
+    puts "見たいレビューを選択してください"
+    number = 0
+    a_posts.each do |p|
+      puts "[#{number}] : #{p[:title]}のレビュー"
+      number += 1
+    end
+    input = gets.to_i
+    if input > a_posts.length
+      puts "その番号は登録されていません"
+    else
+      post = a_posts[input]
+      line = "----------------------"
+      puts "ジャンル : #{post[:genre]}\n#{line}"
+      puts "タイトル : #{post[:title]}\n#{line}"
+      puts "感想 : \n#{post[:review]}\n#{line}" 
+    end
   end
-  input = gets.to_i
-  post = a_posts[input]
-  line = "----------------------"
-  puts "ジャンル : #{post[:genre]}\n#{line}"
-  puts "タイトル : #{post[:title]}\n#{line}"
-  puts "感想 : \n#{post[:review]}\n#{line}" 
 end
 
 def end_program
