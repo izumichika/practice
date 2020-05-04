@@ -1,9 +1,4 @@
-line = "----------------------"
-puts "レビュー数 : 0"
-puts "[0]レビューを書く\n[1]レビューを読む\n[2]アプリを終了する"
-input = gets.to_i
-
-if input == 0 
+def post_review
   post = {}
   puts "ジャンルを入力してください："
   post[:genre] = gets.chomp
@@ -15,13 +10,33 @@ if input == 0
   puts "ジャンル : #{post[:genre]}\n#{line}"
   puts "タイトル : #{post[:title]}\n#{line}"
   puts "感想 : \n#{post[:review]}\n#{line}" 
+end
 
-elsif input == 1
-  puts 
-elsif input == 2
+def read_review
+end
+
+def end_program
   exit
-else
+end
+
+def exception
   puts "入力された値は無効です"
+end
+
+line = "----------------------"
+puts "レビュー数 : 0"
+puts "[0]レビューを書く\n[1]レビューを読む\n[2]アプリを終了する"
+input = gets.to_i
+
+
+if input == 0 
+  post_review
+elsif input == 1
+  read_review
+elsif input == 2
+  end_program
+else
+  exception
 end
 
 
